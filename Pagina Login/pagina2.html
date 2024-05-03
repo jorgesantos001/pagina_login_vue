@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Cadastro</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <h2 class="titulo">Página de Cadastro</h2>
+    <input class="dadosLogin" placeholder="Nome" v-model="name">
+    <input class="dadosLogin" placeholder="Email" v-model="username">
+    <input class="senha" placeholder="Password" v-model="password">
+    <div class="botao-container"> 
+        <button @click="cadastrar">Cadastrar</button>
+        <br>
+        <a href="index.html" class="link-button">Voltar para Login</a>
+    </div>
+    <div class="aviso" v-if="cadastroRealizado">{{ avisoCadastro }}</div>
+    <div class="aviso" v-if="!cadastroRealizado && username === '' && password === '' && name === ''">Por favor, insira o nome, email e a senha.</div>
+</div>
+</body>
+</html>
+<script src="index.js"></script>
+
+
